@@ -521,10 +521,10 @@ public with sharing class SOQL {
 												ORDER BY FirstName];
 
 		//HOW DO I GET ONE CONTACT FOR ONE ACCOUNT ID?! god this was rough
-		Map <Id, Contact> AccContactMap = new Map <Id, Contact>();
+		Map <Id, Contact> accContactMap = new Map <Id, Contact>();
 		for (Contact con : allRelatedContacts){
 			if(accContactMap.ContainsKey(con.accountId) == false){
-				AccContactMap.put(con.accountId, con);
+				accContactMap.put(con.accountId, con);
 			}
 		}
 
