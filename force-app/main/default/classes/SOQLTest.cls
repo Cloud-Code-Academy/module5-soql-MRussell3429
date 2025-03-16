@@ -928,13 +928,11 @@ public with sharing class SOQLTest {
 		// Query for the updated Opportunity
 		// HINT: The repository has the primary contact field. You will need to figure out how to deploy it force-app\main\default\objects\Opportunity\fields\Primary_Contact__c.field-meta.xml
 		
-		//Mack Noted: Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>([SELECT Id, Primary_Contact__c FROM Opportunity]);
+		//Mack attempt:
+		Map<Id, Opportunity> oppMap = new Map<Id, Opportunity>([SELECT Id, Primary_Contact__c FROM Opportunity]);
 
 		// Assert that the Primary Contact was set correctly
-		/*
-		 * 
-		 * 
-		 * System.assertEquals(
+		System.assertEquals(
 			testContact2.Id,
 			oppMap.get(closeWonOpp.Id).Primary_Contact__c,
 			'Primary Contact was not set correctly.'
@@ -944,7 +942,5 @@ public with sharing class SOQLTest {
 			oppMap.get(prospectingOpp.Id).Primary_Contact__c,
 			'Primary Contact was set incorrectly.'
 		);
-
-		*/
 	}
 }
